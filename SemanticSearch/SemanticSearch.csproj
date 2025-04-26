@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>16b08ba4-572e-4579-88d8-dd798c0f3d6b</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\articles.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\articles.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CustomToolNamespace>BasicSemanticSearch</CustomToolNamespace>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Aspire.OllamaSharp" Version="9.4.1-beta.277" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.4" />
+    <PackageReference Include="System.Numerics.Tensors" Version="10.0.0-preview.3.25171.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BasicSemanticSearch.ServiceDefaults\BasicSemanticSearch.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>
